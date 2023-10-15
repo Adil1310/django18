@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My List</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .header {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .my-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .my-list li {
+            font-size: 18px;
+            color: #444;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">My list</h1>
+        <ul class="my-list">
+            {% for item in my_objects %}
+            <li>{{ item.field1 }} - {{ item.field2 }}</li>
+            {% empty %}
+            <li>No items found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
